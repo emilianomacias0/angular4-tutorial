@@ -10,12 +10,16 @@ import { map, catchError, tap } from 'rxjs/operators';
 @Injectable()
 export class ProductosService{
 public url : string;
-
+private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
 constructor(public _http:  HttpClient){
     this.url = GLOBAL.url;
 }
 
 getProductos(){
-    return 'Texto desde el servicio';
+    return this._http.get(this.url+'productos').pipe(
+        map(this.extractData));
 }
 }
