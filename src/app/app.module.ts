@@ -7,8 +7,10 @@ import {HomeComponent} from './components/home.component';
 import {ErrorComponent} from './components/error.component';
 import {ProductosListComponent} from './components/productos-list.component';
 import {DemoComponent} from './components/demo.component';
+import {ProductoAddComponent} from './components/producto-add.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -17,14 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ErrorComponent,
     ProductosListComponent,
-    DemoComponent
+    DemoComponent,
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

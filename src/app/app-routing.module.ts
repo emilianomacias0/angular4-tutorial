@@ -6,7 +6,7 @@ import {HomeComponent} from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import {ProductosListComponent} from './components/productos-list.component';
 import {DemoComponent} from './components/demo.component';
-
+import {ProductoAddComponent} from './components/producto-add.component';
 
 const routes: Routes = [
   {
@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'productos',
     component: ProductosListComponent
+  },
+  {
+    path: 'producto-add',
+    component: ProductoAddComponent
   },
   {
     path: 'demo',
