@@ -29,7 +29,13 @@ export class ProductoAddComponent{
         console.log(this.producto);
         this._productoSerice.addProducto(this.producto).subscribe(
             response => {
-                console.log(response);
+                if(response.code == 200){
+                    console.log(response);
+                    this._router.navigate(['/home']);
+                }else{
+                    alert("Error al registrar producto");
+                }
+                
             },
             error =>{
                 console.log(<any>error);
