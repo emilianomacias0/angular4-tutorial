@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {Router,ActivatedRouter,Params} from '@angular/core';
+import {Router,ActivatedRouter,Params} from '@angular/router';
 import { ProductosService } from '../servicios/producto.service';
-
 import {Producto} from '../models/producto';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'producto-agregar',
@@ -11,11 +11,29 @@ import {Producto} from '../models/producto';
 })
 export class ProductoAddComponent{
     public titulo : string;
-    constructor(){
+    public producto: Producto;
+    constructor(
+        private _productoSerice: ProductosService,
+        private _route: ActivatedRoute,
+        private _router: Router
+    ){
         this.titulo = 'Crear un nuevo producto';
+        this.producto = new Producto(0,'','',0,'');
     }
 
     ngOnInit(){
         console.log('Producto add cargado');
+    }
+
+    onSubmit(){
+        console.log(this.producto);
+        this._productoSerice.addProducto(this.producto).subscribe(
+            response => {
+                console.log(response);
+            },
+            error =>{
+                console.log(<any>error);
+            }
+        );
     }
 }

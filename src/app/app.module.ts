@@ -10,7 +10,7 @@ import {DemoComponent} from './components/demo.component';
 import {ProductoAddComponent} from './components/producto-add.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule}   from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +28,8 @@ import { FormsModule }   from '@angular/forms';
     BrowserModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
