@@ -70,3 +70,10 @@
     margin-top: 30px;
     border-radius: 20px;
 }
+
+.activado{
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: bold;
+    border-bottom: 3px solid yellow !important;
+}

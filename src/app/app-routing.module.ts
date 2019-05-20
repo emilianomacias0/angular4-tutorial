@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {HomeComponent} from './components/home.component';
 import { ErrorComponent } from './components/error.component';
+import {ProductosListComponent} from './components/productos-list.component';
+import {DemoComponent} from './components/demo.component';
+
 
 const routes: Routes = [
   {
@@ -15,9 +18,17 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'productos',
+    component: ProductosListComponent
+  },
+  {
+    path: 'demo',
+    component: DemoComponent
+  },
+  {
     path: '**',
     component: ErrorComponent
-    }
+  }
 ];
 
 
